@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Calculator</title>
+   <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+   <div class="calculator">
+      <div class="header">
+         <div class="window">
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+         </div>
+         <marquee id="mar_" style="color: white;">Welcome to calculator</marquee>
+         <span id="ans2" style="color: white;"></span>
+         <input id="ans"/>
+      </div>
+      <div class="keys">
+         <div class="row">
+            <div class="number">
+               <button onclick="ans.value+='7'">7</button>
+               <button onclick="ans.value+='8'">8</button>
+               <button onclick="ans.value+='9'">9</button>
+            </div>
+            <button onclick="ans.value+='/'">÷</button>
+         </div>
+         <div class="row">
+            <div class="number">
+               <button onclick="ans.value+='4'">4</button>
+               <button onclick="ans.value+='5'">5</button>
+               <button onclick="ans.value+='6'">6</button>
+            </div>
+            <button onclick="ans.value+='-'">-</button>
+         </div>
+         <div class="row">
+            <div class="number">
+               <button onclick="ans.value+='1'">1</button>
+               <button onclick="ans.value+='2'">2</button>
+               <button onclick="ans.value+='3'">3</button>
+            </div>
+            <button onclick="ans.value+='+'">+</button>
+         </div>
+         <div class="row">
+            <div class="number">
+               <button class="dull" onclick="clean_()">AC</button>
+               <button onclick="ans.value+='0'">0</button>
+               <button onclick="ans.value+='.'">.</button>
+            </div>
+            <button onclick="hidden_()">=</button>
+         </div>
+      </div>
+   </div>
+</body>
+<script>
+   function hidden_(){
+      if(eval(ans.value) === undefined ){
+         alert("Enter valid input!!!");
+      }
+      else{
+         document.getElementById('ans2').innerHTML = eval(ans.value);
+         document.getElementById('mar_').style.display = "none";
+      }
+   }
+   function clean_(){
+      ans.value = "";
+   }
+   document.querySelector('#ans').addEventListener('keypress', function (Keyboard_) {
+    if(Keyboard_.key === 'Enter') {
+      hidden_();
+    }
+   });
+</script>
+</html>
