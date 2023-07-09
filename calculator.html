@@ -20,11 +20,19 @@
       <div class="keys">
          <div class="row">
             <div class="number">
+               <button onclick="ans.value+='+'">+</button>
+               <button onclick="ans.value+='-'">-</button>
+               <button onclick="ans.value+='/'">/</button>
+            </div>
+            <button onclick="ans.value+='*'">x</button>
+         </div>
+         <div class="row">
+            <div class="number">
                <button onclick="ans.value+='7'">7</button>
                <button onclick="ans.value+='8'">8</button>
                <button onclick="ans.value+='9'">9</button>
             </div>
-            <button onclick="ans.value+='/'">÷</button>
+            <button onclick="ans.value+='+'">+</button>
          </div>
          <div class="row">
             <div class="number">
@@ -40,12 +48,12 @@
                <button onclick="ans.value+='2'">2</button>
                <button onclick="ans.value+='3'">3</button>
             </div>
-            <button onclick="ans.value+='+'">+</button>
+            <button class="dull" onclick="clean_()">AC</button>
          </div>
          <div class="row">
             <div class="number">
-               <button class="dull" onclick="clean_()">AC</button>
                <button onclick="ans.value+='0'">0</button>
+               <button onclick="ans.value+='00'">00</button>
                <button onclick="ans.value+='.'">.</button>
             </div>
             <button onclick="hidden_()">=</button>
